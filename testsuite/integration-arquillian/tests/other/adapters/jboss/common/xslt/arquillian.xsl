@@ -70,8 +70,8 @@
                     <property name="managementPort">${app.server.1.management.port}</property>
                     <property name="startupTimeoutInSeconds">${app.server.startup.timeout}</property>
                 </configuration>
-            </container>            
-            
+            </container>
+
             <container qualifier="app-server-${{app.server}}-ha-node-2" mode="manual" >
                 <configuration>
                     <property name="enabled">true</property>

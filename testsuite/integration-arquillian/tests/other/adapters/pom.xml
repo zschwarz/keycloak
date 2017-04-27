@@ -93,6 +93,7 @@
         <module>jboss</module>
         <module>karaf</module>
         <module>tomcat</module>
+        <module>was</module>
     </modules>
 
     <profiles>

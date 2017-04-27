@@ -102,6 +102,12 @@
                 <artifactId>wildfly-arquillian-container-domain-managed</artifactId>
                 <version>${arquillian-wildfly-container.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.jboss.arquillian.container</groupId>
+                <artifactId>arquillian-was-remote-8.5</artifactId>
+                <version>1.0.0.Beta2</version>
+                <scope>test</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     

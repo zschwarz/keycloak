@@ -173,5 +173,14 @@
             <property name="startupTimeoutInSeconds">${auth.server.jboss.startup.timeout}</property>
         </configuration>
     </container>
-            
+
+    <container qualifier="app-server-was" mode="manual">
+        <configuration>
+            <property name="remoteServerAddress">localhost</property>
+            <property name="remoteServerSoapPort">9080</property>
+            <property name="securityEnabled">false</property>
+            <property name="username">admin</property>
+        </configuration>
+    </container>
+
 </arquillian>
