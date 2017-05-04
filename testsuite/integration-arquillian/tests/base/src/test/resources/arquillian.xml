@@ -182,5 +182,14 @@
             <property name="username">admin</property>
         </configuration>
     </container>
+    <container qualifier="app-server-wls" mode="manual">
+        <configuration>
+            <property name="adminUrl">http://localhost:7001/</property>
+            <property name="adminUserName">admin</property>
+            <property name="adminPassword">admin666</property>
+            <property name="target">AdminServer</property>
+            <property name="wlHome">/home/zschwarzova/Oracle/Middleware/Oracle_Home/wlserver</property>
+        </configuration>
+    </container>
 
 </arquillian>

@@ -94,6 +94,7 @@
         <module>karaf</module>
         <module>tomcat</module>
         <module>was</module>
+        <module>wls</module>
     </modules>
 
     <profiles>
