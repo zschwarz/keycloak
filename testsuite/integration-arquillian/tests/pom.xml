@@ -744,6 +744,12 @@
                     <version>${project.version}</version>
                 </dependency>
 
+                <dependency>
+                    <groupId>org.jboss.arquillian.container</groupId>
+                    <artifactId>arquillian-was-remote-8.5</artifactId>
+                    <version>1.0.0.Final-SNAPSHOT</version>
+                </dependency>
+
                 <!-- TEST DEPENDENCIES -->
                 <dependency>
                     <groupId>junit</groupId>
