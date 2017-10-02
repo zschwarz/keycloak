@@ -36,7 +36,7 @@
                     <property name="adminUserName">weblogic</property>
                     <property name="adminPassword">weblogic1</property>
                     <property name="target">AdminServer</property>
-                    <property name="wlHome">/home/jenkins/Oracle/Middleware/Oracle_Home/wlserver</property>
+                    <property name="wlHome">/home/zschwarzova/Oracle/Middleware/Oracle_Home/wlserver</property>
                 </configuration>
             </container>
     
