@@ -296,6 +296,9 @@ public class DeploymentArchiveProcessor implements ApplicationArchiveProcessor {
             if (isWASAppServer(testClass.getJavaClass())) {
                 removeElementsFromDoc(webXmlDoc, "web-app", "servlet-mapping");
                 removeElementsFromDoc(webXmlDoc, "web-app", "servlet");
+
+                ((WebArchive) archive).addAsLibraries(KeycloakDependenciesResolver.resolveDependencies("org.apache.httpcomponents:httpclient:4.5"));
+                ((WebArchive) archive).delete("/WEB-INF/lib/commons-codec-1.9.jar");
             }
             
             if (isWLSAppServer(testClass.getJavaClass())) {
