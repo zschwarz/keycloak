@@ -118,7 +118,24 @@ public class DeploymentArchiveProcessor implements ApplicationArchiveProcessor {
                     .addClass(org.keycloak.testsuite.arquillian.annotation.AppServerContainer.class)
                     .addClass(org.keycloak.testsuite.arquillian.annotation.UseServletFilter.class);
         }
-        
+
+        if (isWASAppServer(testClass.getJavaClass())) {
+//        {
+            MavenResolverSystem resolver = Maven.resolver();
+            MavenFormatStage dependencies = resolver
+                    .loadPomFromFile("pom.xml")
+                    .importTestDependencies()
+                    .resolve("org.apache.httpcomponents:httpclient")
+                    .withTransitivity();
+
+            ((WebArchive) archive)
+                    .addAsLibraries(dependencies.asFile())
+                    .addClass(org.keycloak.testsuite.arquillian.annotation.AppServerContainer.class)
+                    .addClass(org.keycloak.testsuite.arquillian.annotation.UseServletFilter.class);
+        }
+
+
+
     }
 
     public static boolean isAdapterTest(TestClass testClass) {
@@ -296,9 +313,6 @@ public class DeploymentArchiveProcessor implements ApplicationArchiveProcessor {
             if (isWASAppServer(testClass.getJavaClass())) {
                 removeElementsFromDoc(webXmlDoc, "web-app", "servlet-mapping");
                 removeElementsFromDoc(webXmlDoc, "web-app", "servlet");
-
-                ((WebArchive) archive).addAsLibraries(KeycloakDependenciesResolver.resolveDependencies("org.apache.httpcomponents:httpclient:4.5"));
-                ((WebArchive) archive).delete("/WEB-INF/lib/commons-codec-1.9.jar");
             }
             
             if (isWLSAppServer(testClass.getJavaClass())) {
